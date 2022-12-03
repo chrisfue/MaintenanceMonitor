@@ -4,7 +4,7 @@ public class MaintenanceMonitor {
 
     public MaintenanceMonitor(){}
 
-    private String status= "Everything works as expected";
+    private String status= "Everything works  as expected";
 
     public String getStatus() {
         return status;
@@ -22,5 +22,5 @@ public class MaintenanceMonitor {
         return "test";}
         else return inputMessage;
 
-    };
+    }
 }
