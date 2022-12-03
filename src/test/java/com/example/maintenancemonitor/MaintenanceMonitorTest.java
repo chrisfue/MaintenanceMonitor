@@ -1,17 +1,13 @@
 package com.example.maintenancemonitor;
 
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import static org.junit.jupiter.api.Assertions.*;
 
-
-public class MaintenanceMonitorTest {
-
+class MaintenanceMonitorTest {
     @Test
-    public static void checkInputIsTaken(){
+    public void test_checkInputIsTakenToStatus(){
 
         //Arrange
         MaintenanceMonitor mTest = new MaintenanceMonitor();
@@ -19,7 +15,7 @@ public class MaintenanceMonitorTest {
         String inputMessage = "Servers down till 5pm!";
         mTest.input(inputMessage);
         //Assert
-        assertEquals(inputMessage,mTest.getStatus());
+        Assertions.assertEquals(inputMessage,mTest.getStatus());
     }
 
 
