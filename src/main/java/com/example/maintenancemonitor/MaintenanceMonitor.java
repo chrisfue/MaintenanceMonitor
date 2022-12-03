@@ -19,8 +19,11 @@ public class MaintenanceMonitor {
     public String  input (String inputMessage){
 
         if(inputMessage==null){
-        return "test";}
-        else return inputMessage;
+        return this.getStatus();}
+        else {
+            this.setStatus(inputMessage);
+            return this.getStatus();
+        }
 
     }
 }
