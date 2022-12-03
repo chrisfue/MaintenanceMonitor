@@ -4,7 +4,7 @@ public class MaintenanceMonitor {
 
     public MaintenanceMonitor(){};
 
-    public String  input (String Inputmessage){
+    public String  input (String inputMessage){
 
         return "test";
 
