@@ -14,10 +14,20 @@ public class MaintenanceMonitorController {
 
 
     @GetMapping("/api/message")
-    public String feedback(/*@RequestParam(name="inputMessage")String inputMessage*/){
-        return mainMon.getStatus();
+    public String feedback(@RequestParam(name = "inputMessage", required = false) String inputMessage) {
+        if (inputMessage == null) {
+            return mainMon.getStatus();
+        } else {
+            mainMon.input(inputMessage);
+            return "OK";
+        }
     }
 
+        @GetMapping("/api/message/reset")
+                public String reset(){
+            mainMon.input("Everything works  as expected");
+            return "OK";
+        }
 
 
 }
