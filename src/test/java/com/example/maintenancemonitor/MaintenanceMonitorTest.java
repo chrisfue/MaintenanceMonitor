@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MaintenanceMonitorTest {
+    //Test für gültigen Input
     @Test
     public void test_checkInputIsTakenToStatus(){
 
@@ -18,6 +19,7 @@ class MaintenanceMonitorTest {
         //Assert
         Assertions.assertEquals(inputMessage,mTest.getStatus());
     }
+    //Test für keinen Input
     @Test
     public void test_nullDoesNotChangeStatud(){
         MaintenanceMonitor mTest = new MaintenanceMonitor();
