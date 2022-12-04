@@ -14,7 +14,6 @@ on:
   pull_request:
     branches: [ "dev_Christoph" ]
 
-
 jobs:
   build:
 
@@ -26,11 +25,11 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'corretto'
+        distribution: 'temurin'
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
+
     - name: Copy to staging
       run: mkdir staging && cp target/*.jar staging
     - name: upload

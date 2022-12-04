@@ -2,11 +2,28 @@ package com.example.maintenancemonitor;
 
 public class MaintenanceMonitor {
 
-    public MaintenanceMonitor(){};
+    public MaintenanceMonitor(){}
 
-    public String  input (String Inputmessage){
+    private String status= "Everything works  as expected";
 
-        return "test";
+    public String getStatus() {
+        return status;
+    }
 
-    };
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
+    public String  input (String inputMessage){
+
+        if(inputMessage==null){
+        return this.getStatus();}
+        else {
+            this.setStatus(inputMessage);
+            return this.getStatus();
+        }
+
+    }
 }
