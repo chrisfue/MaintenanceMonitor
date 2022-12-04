@@ -1,9 +1,7 @@
 package com.example.maintenancemonitor;
 
-import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,7 +9,7 @@ import java.util.Date;
 
 @RestController
 
-public class MaintenanceMonitorController {
+public class MaintenanceMonitorController implements ErrorController {
 
 
     private MaintenanceMonitor mainMon = new MaintenanceMonitor();
@@ -36,9 +34,12 @@ public class MaintenanceMonitorController {
             mainMon.input("Everything works  as expected" +  "<br>last updated " + dtf.format(now));
             return "OK";
         }
-        @GetMapping("/error")
-    public String error(){
-        return"no valid Target, try localhost=:8080/api/message";
-        }
+
+       private static final String PATH="/error";
+    @RequestMapping(value=PATH, method= RequestMethod.GET)
+    public String defaulterror(){
+        return "This path does not exist <br><br> Try localhost:8080/api/message";
+
+    }
 
 }
