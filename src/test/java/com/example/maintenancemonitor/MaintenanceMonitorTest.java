@@ -1,5 +1,6 @@
 package com.example.maintenancemonitor;
 
+import com.sun.tools.javac.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,11 @@ class MaintenanceMonitorTest {
         //Assert
         Assertions.assertEquals(inputMessage,mTest.getStatus());
     }
-
+    @Test
+    public void test_nullDoesNotChangeStatud(){
+        MaintenanceMonitor mTest = new MaintenanceMonitor();
+        mTest.input(null);
+        Assertions.assertEquals(mTest.getStatus(),"Everything works  as expected");
+    }
 
 }
